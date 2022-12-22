@@ -7,21 +7,26 @@
   <meta http-equiv="X-UA-Compatible" content="ie=edge">
   <title>Petsbook</title>
   <link rel="stylesheet" href="index.css" />
+ <script type="module" src="main.js"></script>
+
 </head>
 
 <body>
   <!-- PANTALLA INICIO-->
-  <section class="pantalla" id="inicio">
+  <section class="parteSuperior" id="inicio">
     <section class="presentacion" id="presentacion">
       <div class="logo" id=""></div>
       <p class="frase" id="frase">Fase corta</p>
     </section>
 
     <form class="login" id="login">
-      <input type="email" class="datosLogin" id="" placeholder="Correo*" value="">
-      <input type="password" class="datosLogin" id="" placeholder="Contraseña*" value="">
+      <input type="email" class="datosLogin" id="signin-email" placeholder="Correo*" value="">
+      <input type="password" class="datosLogin" id="signin-password" placeholder="Contraseña*">
       <button type="submit" class="loginBtn" id="loginBtn">Iniciar sesión</button>
     </form>
+    <button type="sognput" class= "logout" id="signout"> Cerrar sesión</button>
+      
+      <button id="google">Ingresar con Google</button>
     <section class="invitacion" id="invitacion">
       <p class="pregunta" id="preguntas">¿No tienes una cuenta?</p>
       <div class="" id="">Regístrate</div>
@@ -31,21 +36,22 @@
   </section>
 
   <!-- PANTALLA REGISTRO -->
-  <section class="pantalla" id="registro">
+  <section class="parteSuperior" id="parteSuperior">
     <section class="presentacion" id="">
       <div class="logo" id=""></div>
     </section>
 
     <form class="registro" id="registro">
-      <input type="text" class="datosRegistro" id="" placeholder="Nombre*" value="">
-      <input type="email" class="datosRegistro" id="" placeholder="Correo*" value="">
-      <input type="password" class="datosRegistro" id="" placeholder="Contraseña*" value="">
+      <input type="text" class="datosRegistro" id="signup-name" placeholder="Nombre*" value="">
+      <input type="email" class="datosRegistro" id="signup-email" placeholder="Correo*" value="">
+      <input type="password" class="datosRegistro" id="signup-password" placeholder="Contraseña*" value="">
       <button type="submit" class="signUpBtn" id="signUpBtn">Crear cuenta</button>
     </form>
 
   </section>
 
-  <script type="module" src="main.js"></script>
+ 
+  
   
 </body>
 

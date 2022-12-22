@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.pantalla, .presentacion, .login, .invitacion, .registro {
+.parteSuperior, .presentacion, .login, .invitacion, .registro {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -12,7 +12,7 @@
 
 
 }
-.pantalla {
+.parteSuperior {
     width: 50%;
     height: 100%;
     margin: 50px;
