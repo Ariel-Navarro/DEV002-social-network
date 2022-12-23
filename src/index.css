@@ -4,7 +4,7 @@
     display: flex;
 }
 
-.parteSuperior, .presentacion, .login, .invitacion, .registro {
+.pantalla, .presentacion, .login, .invitacion, .registro, .comenzar {
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -12,9 +12,9 @@
 
 
 }
-.parteSuperior {
+.pantalla {
     width: 50%;
-    height: 100%;
+    height: 80%;
     margin: 50px;
     padding: 5%;
     border: solid 1px;
@@ -24,3 +24,4 @@
     width: 100px;
     background-color: gray;
 }
+

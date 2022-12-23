@@ -4,6 +4,7 @@ import { auth } from "./app/firebase.js";
 import './app/signupForm.js'
 import './app/signin.js'
 import './app/logout.js'
+import './app/googleLogin.js'
 
 
 // Este es el punto de entrada de tu aplicacion
@@ -15,6 +16,6 @@ onAuthStateChanged(auth, async (user) => {
 if(user){
 
 }else{
-
 }
-});
+})
+
