@@ -1,11 +1,12 @@
 import { createUserWithEmailAndPassword } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js"
 import { auth } from './firebase.js'
-
+import  '/main.js'
 
 const signupForm = document.querySelector('#registro')
+console.log(signupForm)
 
 signupForm.addEventListener('submit', async (e) => {
-    e.preventDefault()
+    e.preventDefault
     // let signupName = signupForm['signup-name'].value
     let signupEmail = signupForm['signup-email'].value
     let signupPassword = signupForm['signup-password'].value
@@ -14,8 +15,6 @@ signupForm.addEventListener('submit', async (e) => {
     try {
        const userCredential = await createUserWithEmailAndPassword(auth, signupEmail, signupPassword)
        console.log(userCredential)
-        // .then((res) => console.log(res))
-        // .catch((err) => console.log(err))
 
     } catch (error) {
         console.log(error.message)
