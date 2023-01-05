@@ -13,8 +13,8 @@ export const login = () => {
   signin.addEventListener('submit', async (e) => {
     e.preventDefault();
     console.log('si lo lee');
-    const email = signin['signin-email'].value;
-    const password = signin['signin-password'].value;
+    const email = signin['signinEmail'].value;
+    const password = signin['signinPassword'].value;
     console.log(email);
 
     try {
