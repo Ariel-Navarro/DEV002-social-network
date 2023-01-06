@@ -23,11 +23,15 @@ export default () => {
         <button id='guardar' class="Publicar">Publicar</button>
     </form> 
     
-    <div id='task-container'>
-    </div>
+    <div id='task-container'></div>
 
+    
+    <div class="footerDeHome">
+    <div class = "divIconoHome">
+     <img class="iconHome" src="imagenes/home.png" width=25px alt='foto del usuario'>
     </div>
-
+     <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
+    </div>
     `;
 
   mainApp.innerHTML = templateHome;
