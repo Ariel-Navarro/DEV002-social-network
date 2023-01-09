@@ -1,5 +1,9 @@
 import {
-  deleteTask, getTask, onGetTasks, saveTask, updateTask,
+  deleteTask,
+  getTask,
+  onGetTasks,
+  saveTask,
+  updateTask,
 } from './firebase.js';
 
 export const homeE = () => {
@@ -9,7 +13,7 @@ export const homeE = () => {
   let id = '';
 
   window.addEventListener('DOMContentLoaded', async () => {
-  // const querySnapshot = await getTasks();
+    // const querySnapshot = await getTasks();
 
     onGetTasks((querySnapshot) => {
       let divContain = '';
@@ -20,9 +24,10 @@ export const homeE = () => {
         <div class="cabezaDePost">
         <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
         <p class="nombreDeUsuario">Manchitas</p>
-        <img src="imagenes/mas.png" width=30px height=30px>
-        <button class='delete' data-id='${doc.id}'> Eliminar </button>
-        <button class='editar' data-id='${doc.id}'> Editar </button>
+        <ul class ="menu-horizontal"><img src="imagenes/mas.png" width=30px height=30px>
+         <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
+         <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+        </ul>
         </div>
         <div class="cuerpoDePost" >
         <p class="contenidoP"> ${task.description} </p> 
@@ -37,9 +42,12 @@ export const homeE = () => {
       });
       taskContainer.innerHTML = divContain;
 
+
+
       const btnEliminar = taskContainer.querySelectorAll('.delete');
 
       btnEliminar.forEach((btn) => {
+        
         btn.addEventListener('click', (e) => {
           deleteTask(e.target.dataset.id);
         });
@@ -63,7 +71,7 @@ export const homeE = () => {
   });
 
   taskForm.addEventListener('submit', (e) => {
-  // para no recargar la pag
+    // para no recargar la pag
     e.preventDefault();
 
     const description = taskForm.description;
@@ -81,4 +89,6 @@ export const homeE = () => {
 
     taskForm.reset();
   });
+  
 };
+

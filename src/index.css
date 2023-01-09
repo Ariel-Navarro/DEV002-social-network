@@ -215,12 +215,21 @@ div.publicacion {
     padding: 15px;
 }
 /* delete editar */
+.delete {
+   border-radius: 0px 0px 10px 10px;
+} 
+
+.editar{
+    border-radius: 10px 10px 0px 0px;
+}
+
 .delete,
 .editar {
-    background-color: #333652;
-    color: aliceblue;
-    border-radius: 20px;
+    /* background-color: #333652; */
+    /* color: aliceblue; */
+    padding: 7px 5px ;
     cursor: pointer;
+    display: none;
 }
 .footerDeHome {
     /* align-self: flex-end; */
@@ -272,10 +281,35 @@ div.publicacion {
      background-color: #e9eaec;
     border-radius: 0px 0px 15px 15px;
 } 
+
+/* Menú desplegable del icono más */
+
+ul, li{
+    list-style: none;
+    position: sticky;
+   
+}
+
+ul:hover li{
+    background-color: #ffffff;
+    color: #000000;
+    display: block;
+    position: relative;
+}
 /* ------------------------------------------- */
+/* #modal-eliminar {
+    background-color: #6ad11c;
+}
 
+#contenedor-modal-eliminar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 580px;
+    height: 580px;
+    background-color: rgba(255, 255, 255, 0.566);
 
-
+} */
 
 
 

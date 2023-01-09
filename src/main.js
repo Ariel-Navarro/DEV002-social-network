@@ -15,7 +15,7 @@ import home from './components/home.js';
 myFunction();
 
 export const mainApp = document.getElementById('app');
-const mainTrue = document.getElementById('nuevo');
+export const mainTrue = document.getElementById('nuevo');
 
 const routes = {
   '/': logIn,

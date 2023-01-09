@@ -52,3 +52,7 @@ export const getTask = (id) => getDoc(doc(conFirestore, 'tasks', id));
 export const updateTask = (id, nuevosCampos) => {
     updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
 };
+
+// export const likes = async (id, idUserLike) => updateDoc(doc(db, "posts", id), {
+//   likesPost: arrayUnion(idUserLike),
+// });
