@@ -7,7 +7,13 @@ import { initializeApp } from "https://www.gstatic.com/firebasejs/9.15.0/firebas
 // TODO: Add SDKs for Firebase products that you want to use
 // https://firebase.google.com/docs/web/setup#available-libraries
 
-import { getAuth, createUserWithEmailAndPassword, onAuthStateChanged } from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+import {
+  getAuth,
+  createUserWithEmailAndPassword,
+  onAuthStateChanged,
+  signInWithEmailAndPassword,
+} from 'https://www.gstatic.com/firebasejs/9.15.0/firebase-auth.js';
+
 import {
   getFirestore,
   collection,
@@ -21,7 +27,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/9.15.0/firebase-firestore.js";
 // import {  };
 // Your web app's Firebase configuration
- const firebaseConfig = {
+const firebaseConfig = {
   apiKey: "AIzaSyAxTIdXRfXDybuXxhquYjdQ8BRa1SqyaMM",
   authDomain: "social-network-app-7c3a3.firebaseapp.com",
   projectId: "social-network-app-7c3a3",
@@ -37,8 +43,8 @@ export { createUserWithEmailAndPassword };
 // firestore
 export const conFirestore = getFirestore();
 export const saveTask = (description) => {
-    console.log(description);
-    addDoc(collection(conFirestore, 'tasks'), { description });
+  console.log(description);
+  addDoc(collection(conFirestore, 'tasks'), { description });
 };
 
 export const getTasks = () => getDocs(collection(conFirestore, 'tasks'));
@@ -50,7 +56,9 @@ export const deleteTask = (id) => deleteDoc(doc(conFirestore, 'tasks', id));
 export const getTask = (id) => getDoc(doc(conFirestore, 'tasks', id));
 
 export const updateTask = (id, nuevosCampos) => {
-    updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
+  updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
 };
 
-export const userState = (user) => onAuthStateChanged(auth, (user));
+export { signInWithEmailAndPassword, onAuthStateChanged };
+
+// export const userState = (user) => onAuthStateChanged(auth, (user));
