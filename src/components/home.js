@@ -9,7 +9,7 @@ import { auth, onAuthStateChanged } from '../app/firebase.js';
 // Vista de Home de Petsbook
 
 export const Home = () => {
-  onAuthStateChanged(auth, async (user) => {
+  onAuthStateChanged(auth, (user) => {
     try {
       if (!user) {
         onNavigate('/');
