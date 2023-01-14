@@ -1,18 +1,20 @@
-import { auth, signInWithEmailAndPassword } from '../src/app/firebase.js';
 import { login } from '../src/app/signin.js';
+import { auth, signInWithEmailAndPassword } from '../src/app/firebase.js';
 
-jest.mock('../src/app/firebase.js', () => ({
-  auth: jest.fn(() => ({ auth: 'Test' })),
+jest.mock('../src/app/firebase.js', () => {
+  return {
+    auth: jest.fn(() => ({ auth: 'Test' })),
 
-  signInWithEmailAndPassword: jest.fn((auth, email, password) => {
-    if (!email || !password) {
-      throw new Error('ERROR');
-    }
-    Promise.resolve({
-      user: 'meet',
-    });
-  }),
-}));
+    signInWithEmailAndPassword: jest.fn((auth, email, password) => {
+      if (!email || !password) {
+        throw new Error('ERROR');
+      }
+      Promise.resolve({
+        user: 'meet',
+      });
+    }),
+  };
+});
 
 describe('the user should be able to log in with his email and password', () => {
   const email = 'meet@gmail.com';
@@ -32,7 +34,7 @@ describe('the user should be able to log in with his email and password', () => 
       expect(error).toMatch('Error');
     }
   });
-  it('signup debería ser una funcion', () => {
-    expect(typeof signup).toBe('function');
+  it('login debería ser una funcion', () => {
+    expect(typeof login).toBe('function');
   });
 });
