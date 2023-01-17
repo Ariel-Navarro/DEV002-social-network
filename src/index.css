@@ -223,7 +223,7 @@ p {
     font-size: 90%;
     margin: 0 10px 0 10px;
 }
-.logoutQContainer{
+.logoutQContainer {
     display: none;
     position: absolute;
     top: 0;
@@ -437,6 +437,18 @@ ul:hover li {
 
 /* ------------------------------------------- */
 
+/* modalEditar */
+#modal-editar{
+
+}
+
+#modal-central-editar{
+
+}
+
+#edtbtn{
+
+}
 
 
 

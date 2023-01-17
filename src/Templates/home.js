@@ -36,4 +36,13 @@ export const templateHome = `
              </div>
              <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
            </div>
+
+
+         <div id="modal-editar">
+         <div id="modal-central-editar">
+         <p id="equis">X</p>
+         <p id="pregunta" class="Q">¿Deseas editar este post?</p>
+         <button id="edtbtn>Editar</button>
+         </div>
+         </div>
     `;
