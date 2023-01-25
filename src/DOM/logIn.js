@@ -78,6 +78,8 @@ export const Login = () => {
           alert('Probablemente te olvidaste de ingresar tu contraseña');
         } else if (error.code === 'auth/user-not-found') {
           alert('Esta cuenta no está creada');
+        } else if (error.code === 'auth/wrong-password') {
+          alert('Contraseña incorrecta');
         }
         // Podríamos hacer como último else if que no lleve a home si no esta registrado
         //  o iniciado sesión
