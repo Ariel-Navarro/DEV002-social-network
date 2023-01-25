@@ -65,9 +65,10 @@ import {
   arrayRemove,
 } from './config.js';
 
-export const saveTask = (description) => {
+export const saveTask = (description, uid) => {
   // console.log(description);
   addDoc(collection(conFirestore, 'tasks'), {
+    uid,
     description,
     likes: [],
   });

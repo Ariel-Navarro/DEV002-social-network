@@ -74,6 +74,10 @@ export const Login = () => {
           alert('Tu contraseña es muy débil');
         } else if (error.code === 'auth/invalid-email') {
           alert('Este correo es inválido');
+        } else if (error.code === 'auth/internal-error') {
+          alert('Probablemente te olvidaste de ingresar tu contraseña');
+        } else if (error.code === 'auth/user-not-found') {
+          alert('Esta cuenta no está creada');
         }
         // Podríamos hacer como último else if que no lleve a home si no esta registrado
         //  o iniciado sesión
@@ -90,6 +94,7 @@ export const Login = () => {
         const googleUid = (user.user.uid);
         const googlePhotoURL = (user.user.photoURL);
         console.log(googleEmail, googlePhotoURL, googleUid, googleUser);
+        onNavigate('/home');
       });
   });
 

@@ -67,18 +67,29 @@ export const homeE = (taskContainer, taskForm, div) => {
           }
         };
         likeImg();
+        let menuDeleteEdit = '';
+        const menuOpcion = () => {
+          if (task.uid == userId) {
+            menuDeleteEdit = `
+            <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
+            <div class="edit-delet">
+            <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
+            <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
+            </div>
+            </ul>
+            `;
+          } else {
+            menuDeleteEdit = '<div> </div>';
+          }
+        };
+        menuOpcion();
 
         divContain += `
         <section class="post">
         <div class="cabezaDePost">
         <img class="fotoDePerfil" src="imagenes/pug.jpg" alt='foto del usuario'>
         <p class="nombreDeUsuario"> Manchitas</p>
-        <ul disabled selected class ="menu-horizontal" id="mas"><img src="imagenes/mas.png" width=30px height=30px>
-         <div class="edit-delet">
-         <li class='editar' data-id='${doc.id}'><img width=15px src="imagenes/editar.png"> Editar publicación</li>
-         <li class='delete' data-id='${doc.id}'><img width=15px src="imagenes/eliminar.png"> Eliminar </li>
-         </div>
-        </ul>
+        ${menuDeleteEdit}
         </div>
         <div class="cuerpoDePost" >
         <p class="contenidoP"> ${task.description} </p> 
@@ -224,9 +235,10 @@ export const homeE = (taskContainer, taskForm, div) => {
   // Publicar----------------------------------
   const description = taskForm.description;
   taskForm.addEventListener('submit', (e) => {
+    const userId = user1().uid;
     // para no recargar la pag
     e.preventDefault();
-    saveTask(description.value);
+    saveTask(description.value, userId);
     taskForm.reset();
   });
 };
