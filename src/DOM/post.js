@@ -48,8 +48,7 @@ export const homeE = (taskContainer, taskForm, div) => {
 
   // espera a que DOM se cargue completamente
   window.addEventListener('DOMContentLoaded', async () => {
-    // const querySnapshot = await getTasks();
-    // querysnapshot es una "foto" instantánea de la base de datos
+    
     onGetTasks((querySnapshot) => {
       let divContain = '';
       querySnapshot.forEach((doc) => {
@@ -108,8 +107,6 @@ export const homeE = (taskContainer, taskForm, div) => {
       const btnEliminar = taskContainer.querySelectorAll('.delete');
       console.log(btnEliminar);
 
-      // const test1 = document.querySelector('.contentmodal');
-      // console.log(test1);
       btnEliminar.forEach((btn) => {
         btn.addEventListener('click', (e) => {
           console.log(e.target.dataset.id);
@@ -158,10 +155,6 @@ export const homeE = (taskContainer, taskForm, div) => {
       const userId = user1().uid;
       const likeBtn = taskContainer.querySelectorAll('.like');
 
-      // likeBtn.forEach((btn) => {
-      //   btn.src = 'imagenes/dislike.png'
-      // })
-
       likeBtn.forEach((btn) => {
         btn.addEventListener('click', async (e) => {
           const id = e.target.dataset.id;
@@ -171,30 +164,12 @@ export const homeE = (taskContainer, taskForm, div) => {
           // let numero = likes.length;
           console.log(likes);
           if (currentLike === -1) {
-            // btn.src = 'imagenes/like.png';
             giveLike(id, userId);
-            // console.log(btn)
-            // numero = numero + 1
-            // console.log(numero + " likes")
-            // contadorLike.innerHTML = numero + " me encanta"
           } else {
-            // btn.src = 'imagenes/dislike.png';
             disLike(id, userId);
-            // numero = numero - 1
-            // console.log(numero + " likes")
-            // contadorLike.innerHTML = numero + " me encanta"
-            // console.log(btn)
           }
         });
       });
-
-      // const btnEliminar = taskContainer.querySelectorAll('.delete');
-
-      // btnEliminar.forEach((btn) => {
-      //   btn.addEventListener('click', (e) => {
-      //     deleteTask(e.target.dataset.id);
-      //   });
-      // });
 
       const btnEditar = taskContainer.querySelectorAll('.editar');
 
@@ -236,7 +211,7 @@ export const homeE = (taskContainer, taskForm, div) => {
   const description = taskForm.description;
   taskForm.addEventListener('submit', (e) => {
     const userId = user1().uid;
-    // para no recargar la pag
+    // Para no recargar la pag
     e.preventDefault();
     saveTask(description.value, userId);
     taskForm.reset();

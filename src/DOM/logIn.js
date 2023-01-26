@@ -19,7 +19,6 @@ export const Login = () => {
   const div = document.createElement('div');
   div.className = 'Inicio';
   div.id = 'inicio';
-  // const pantallaInicio = ;
   div.innerHTML = templateInicio;
   // ir a pantalla registrar y home
 
@@ -27,7 +26,6 @@ export const Login = () => {
   const signinForm = div.querySelector('#login');
   const botonGoogle = div.querySelector('#loginGoogle');
   const registrate = div.querySelector('#registrate');
-  // const nombre = div.querySelector("#name-user").value;
 
   signinForm.addEventListener('submit', (e) => {
     e.preventDefault();
@@ -37,34 +35,12 @@ export const Login = () => {
 
     login(email, password)
       .then((credential) => {
-        // if (user1 !== null) {
-        //   user1.providerData.forEach((profile) => {
-        //     console.log(`Sign-in provider: ${profile.providerId}`);
-        //     console.log(`  Provider-specific UID: ${profile.uid}`);
-        //     console.log(`  Name: ${profile.displayName}`);
-        //     console.log(`  Email: ${profile.email}`);
-        //     console.log(`  Photo URL: ${profile.photoURL}`);
-        //   });
-        // }
         user = credential.user;
         displayName = (user.displayName);
         uid = (user.uid);
         emailUser = (user.email);
         console.log(credential);
         console.log(displayName, emailUser, uid);
-        // console.log(emailUser, password);
-        // if (user1 !== null) {
-        //   // The user object has basic properties such as display name, email, etc.
-        //   const displayName1 = user.displayName;
-        //   const email1 = user.email;
-        //   const photoURL1 = user.photoURL;
-        //   const emailVerified1 = user.emailVerified;
-        //   // The user's ID, unique to the Firebase project. Do NOT use
-        //   // this value to authenticate with your backend server, if
-        //   // you have one. Use User.getToken() instead.
-        //   const uid1 = user.uid;
-        //   console.log(displayName1, email1, photoURL1, emailVerified1, uid1);
-        // }
       })
       .catch((error) => {
         console.log(error.message);
@@ -81,10 +57,7 @@ export const Login = () => {
         } else if (error.code === 'auth/wrong-password') {
           alert('Contraseña incorrecta');
         }
-        // Podríamos hacer como último else if que no lleve a home si no esta registrado
-        //  o iniciado sesión
       });
-    // onNavigate("/home");
   });
 
   botonGoogle.addEventListener('click', () => {
