@@ -16,7 +16,7 @@
 
 Las redes sociales son plataformas digitales formadas por comunidades de individuos con intereses, actividades o relaciones en común (como amistad, parentesco, trabajo). Las redes sociales permiten el contacto entre personas y funcionan como un medio para comunicarse e intercambiar información.
 
-<img src="red-social.jpg" alt="Imágen de una red social."/>
+![](./inicio.png)
 
 ***
 ## 2. Sobre Petsbook
@@ -88,17 +88,13 @@ Cuando pensamos en las apps que ya tenemos instaladas en nuestros celulares, cae
 
 ***
 ## 5.  Diseño de la Interfaz de Usuario (prototipo de baja fidelidad)
-
-<img src="captura-de-pantalla-de-prototipo-de-baja-fidelidad-mobile.jpg" alt="Captura de panatalla de nuestro prototipo de baja fidelidad mobile en
-Figma."/>
-<img src="captura-prototipo-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de baja fidelidad desktop en Figma."/>
-
+Pantalla
+![](./prototipo-de-baja-celular.png)
+![](./prototipo-de-baja-computadora.png)
 
 ## 6. Diseño de la Interfaz de Usuario (prototipo de alta fidelidad)
-
-<img src="captura-de-pantalla-de-prototipo-de-alta-fidelidad-mobile.jpg" alt="Captura de pantalla de nuestro prototipo de alta fidelidad mobile en
-Figma."/>
-<img src="captura-prototipo-alta-vista-de-desktop.jpg" alt="Captura de panatalla de nuestro prototipo de alta fidelidad desktop en Figma."/>
+![](./prototipo-de-alta-celular.png)
+![](./prototipo-de-alta-computadora.png)
 
 ***
 ## 7. Consideraciones técnicas UX

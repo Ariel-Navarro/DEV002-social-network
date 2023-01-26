@@ -52,85 +52,84 @@
 // firestore
 // export const conFirestore = getFirestore();
 import {
-    conFirestore,
-    collection,
-    addDoc,
-    getDocs,
-    deleteDoc,
-    doc,
-    getDoc,
-    updateDoc,
-    onSnapshot,
-    arrayUnion,
-    arrayRemove,
-  } from './config.js';
-  
-  export const saveTask = (description, uid) => {
-    // console.log(description);
-    addDoc(collection(conFirestore, 'tasks'), {
-      uid,
-      description,
-      likes: [],
-    });
-  };
-  
-  // export const getTasks = () => getDocs(collection(conFirestore, 'tasks')); // no se utiliza
-  
-  export const onGetTasks = (funcion) => onSnapshot(collection(conFirestore, 'tasks'), funcion);
-  
-  export const deleteTask = (id) => deleteDoc(doc(conFirestore, 'tasks', id));
-  
-  export const getTask = (id) => getDoc(doc(conFirestore, 'tasks', id));
-  
-  export const updateTask = (id, nuevosCampos) => {
-    updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
-  };
-  
-  // -----LIKES----------------------
-  
-  export const giveLike = (id, nuevoLike) => {
-    updateDoc(doc(conFirestore, 'tasks', id), {
-      likes:
-        arrayUnion(
-          nuevoLike,
-        ),
-    });
-    // .then(() => console.log("+1 like"))
-    // .catch((error) => console.error("Error", error));
-  };
-  
-  export const disLike = (id, viejoLike) => {
-    updateDoc(doc(conFirestore, 'tasks', id), {
-      likes:
-        arrayRemove(
-          viejoLike,
-        ),
-    });
-    // .then(() => console.log("-1 like"))
-    // .catch((error) => console.error("Error", error));
-  };
-  
-  export {
-    conFirestore,
-    collection,
-    addDoc,
-    getDocs,
-    deleteDoc,
-    doc,
-    getDoc,
-    updateDoc,
-    onSnapshot,
-    arrayUnion,
-    arrayRemove,
-  };
-  
-  // export const giveLike = (uid) => {
-  //   addDoc(collection(conFirestore, "likes"), {
-  //     userId: uid,
-  //     like: true,
-  //   })
-  // };
-  
-  // observador
-  // export { onAuthStateChanged };
-  
+  conFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  getDoc,
+  updateDoc,
+  onSnapshot,
+  arrayUnion,
+  arrayRemove,
+} from './config.js';
+
+export const saveTask = (description, uid) => {
+  // console.log(description);
+  addDoc(collection(conFirestore, 'tasks'), {
+    uid,
+    description,
+    likes: [],
+  });
+};
+
+// export const getTasks = () => getDocs(collection(conFirestore, 'tasks')); // no se utiliza
+
+export const onGetTasks = (funcion) => onSnapshot(collection(conFirestore, 'tasks'), funcion);
+
+export const deleteTask = (id) => deleteDoc(doc(conFirestore, 'tasks', id));
+
+export const getTask = (id) => getDoc(doc(conFirestore, 'tasks', id));
+
+export const updateTask = (id, nuevosCampos) => {
+  updateDoc(doc(conFirestore, 'tasks', id), nuevosCampos);
+};
+
+// -----LIKES----------------------
+
+export const giveLike = (id, nuevoLike) => {
+  updateDoc(doc(conFirestore, 'tasks', id), {
+    likes:
+      arrayUnion(
+        nuevoLike,
+      ),
+  });
+  // .then(() => console.log("+1 like"))
+  // .catch((error) => console.error("Error", error));
+};
+
+export const disLike = (id, viejoLike) => {
+  updateDoc(doc(conFirestore, 'tasks', id), {
+    likes:
+      arrayRemove(
+        viejoLike,
+      ),
+  });
+  // .then(() => console.log("-1 like"))
+  // .catch((error) => console.error("Error", error));
+};
+
+export {
+  conFirestore,
+  collection,
+  addDoc,
+  getDocs,
+  deleteDoc,
+  doc,
+  getDoc,
+  updateDoc,
+  onSnapshot,
+  arrayUnion,
+  arrayRemove,
+};
+
+// export const giveLike = (uid) => {
+//   addDoc(collection(conFirestore, "likes"), {
+//     userId: uid,
+//     like: true,
+//   })
+// };
+
+// observador
+// export { onAuthStateChanged };
