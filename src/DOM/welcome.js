@@ -22,11 +22,13 @@ export const Welcome = () => {
   const div = document.createElement('div');
   div.className = 'Inicio';
   div.id = 'bienvenida';
+  // const Bienvenida = ;
 
   div.innerHTML = templateWelcome;
 
   const holaBienv = div.querySelector('#hola-bienvenida');
   console.log(holaBienv);
+  // obtengo el valor del local storage
   const nombreObtenido = localStorage.getItem('Nombre');
 
   holaBienv.innerHTML = `¡Hola ${nombreObtenido}, tu cuenta ha sido creada con exito!`;

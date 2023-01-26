@@ -8,7 +8,6 @@ import { onNavigate } from '../main.js';
 import { auth, onAuthStateChanged, logout } from '../app/auth.js';
 import { templateHome } from '../Templates/home.js';
 // Vista de Home de Petsbook
-// import { loginCheck } from '../app/loginCheck.js'
 
 export const Home = () => {
   onAuthStateChanged(auth, async (user) => {
@@ -47,6 +46,7 @@ export const Home = () => {
   nombObte.innerHTML = `Hola, ${nombreObtenido}`;
 
   logoutBtn.addEventListener('click', () => {
+    // div.innerHTML = "";
     logout();
     localStorage.clear();
     onNavigate('/');
